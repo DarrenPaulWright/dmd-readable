@@ -1,0 +1,27 @@
+{
+  "name": "dmd-readable",
+  "version": "0.1.0",
+  "description": "A plugin for dmd/jsdoc-to-markdown to provide more readable docs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarrenPaulWright/dmd-readable.git"
+  },
+  "keywords": [
+    "dmd",
+    "readable",
+    "clean"
+  ],
+  "author": "Darren Paul Wright <Darren@DarrenPaulWright.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DarrenPaulWright/dmd-readable/issues"
+  },
+  "homepage": "https://github.com/DarrenPaulWright/dmd-readable#readme",
+  "dependencies": {
+    "change-case": "^3.1.0"
+  }
+}

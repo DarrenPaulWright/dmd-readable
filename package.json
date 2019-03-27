@@ -1,11 +1,41 @@
 {
   "name": "dmd-readable",
   "version": "0.1.1",
-  "description": "A plugin for dmd/jsdoc-to-markdown to provide more readable docs",
+  "description": "A plugin for dmd and jsdoc-to-markdown to provide more readable docs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "patch": "npm version patch -m \"Increment patch version to %s\"",
+    "minor": "npm version minor -m \"Increment minor version to %s\"",
+    "major": "npm version major -m \"Increment major version to %s\"",
+    "docs": "jsdoc2md *.js > README.md -t docs.hbs --plugin index.js -d 3"
   },
+  "badges": [
+    {
+      "name": "npm",
+      "image": "https://img.shields.io/npm/v/dmd-readable.svg",
+      "url": "https://npmjs.com/package/dmd-readable"
+    },
+    {
+      "name": "deps",
+      "image": "https://david-dm.org/darrenpaulwright/dmd-readable.svg",
+      "url": "https://david-dm.org/darrenpaulwright/dmd-readable"
+    },
+    {
+      "name": "size",
+      "image": "https://packagephobia.now.sh/badge?p=dmd-readable",
+      "url": "https://packagephobia.now.sh/result?p=dmd-readable"
+    },
+    {
+      "name": "vulnerabilities",
+      "image": "https://snyk.io/test/github/DarrenPaulWright/dmd-readable/badge.svg?targetFile=package.json",
+      "url": "https://snyk.io/test/github/DarrenPaulWright/dmd-readable?targetFile=package.json"
+    },
+    {
+      "name": "license",
+      "image": "https://img.shields.io/github/license/DarrenPaulWright/dmd-readable.svg",
+      "url": "https://npmjs.com/package/dmd-readable/LICENSE.md"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DarrenPaulWright/dmd-readable.git"
@@ -23,5 +53,8 @@
   "homepage": "https://github.com/DarrenPaulWright/dmd-readable#readme",
   "dependencies": {
     "change-case": "^3.1.0"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "^4.0.1"
   }
 }

@@ -1,0 +1,13 @@
+# {{changeCase "title" (package "name")}}
+
+> {{package "description"}}
+>
+> {{#each (package "badges")}}[![{{this.name}}][{{this.name}}]][{{this.name}}-url]
+  {{/each}}
+
+{{>main}}
+
+{{#each (package "badges")}}
+[{{this.name}}]: {{this.image}}
+[{{this.name}}-url]: {{this.url}}
+{{/each}}

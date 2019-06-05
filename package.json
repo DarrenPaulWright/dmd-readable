@@ -4,9 +4,9 @@
   "description": "A plugin for dmd and jsdoc-to-markdown to provide more readable docs",
   "main": "index.js",
   "scripts": {
-    "patch": "npm version patch -m \"Increment patch version to %s\"",
-    "minor": "npm version minor -m \"Increment minor version to %s\"",
-    "major": "npm version major -m \"Increment major version to %s\"",
+    "patch": "npm version patch -m \"Increment patch version to %s\" && npm publish",
+    "minor": "npm version minor -m \"Increment minor version to %s\" && npm publish",
+    "major": "npm version major -m \"Increment major version to %s\" && npm publish",
     "docs": "jsdoc2md *.js > README.md -t docs.hbs --plugin index.js -d 3"
   },
   "badges": [
@@ -55,6 +55,6 @@
     "change-case": "^3.1.0"
   },
   "devDependencies": {
-    "jsdoc-to-markdown": "^4.0.1"
+    "jsdoc-to-markdown": "^5.0.0"
   }
 }

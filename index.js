@@ -1,13 +1,15 @@
 /**
- * With npm:
+ * @name Installation
+ * @summary
+ *
  * ```
  * npm install dmd-readable
  * ```
- *
- * @name Installation
  */
 
 /**
+ * @name Usage
+ * @summary
  * Pass the plug-in name to `jsdoc2md` or `dmd`:
  *
  * ```
@@ -21,7 +23,8 @@
  * - changes the delimiter for multiple types in param tables to a comma
  * - adds alias output
  *
- * @name Usage
+ * Use @summary for descriptions without block quotes.
+ *
  */
 module.exports = function() {
 	return {

@@ -28,6 +28,9 @@ exports.package = function(key) {
  * @returns {string}
  */
 exports.changeCase = function(to, string) {
+	if (to === 'title') {
+		to = 'capitalCase';
+	}
 	if (to.indexOf('Case') === -1) {
 		to += 'Case';
 	}

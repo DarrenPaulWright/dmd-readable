@@ -4,7 +4,7 @@
   "description": "A plugin for dmd and jsdoc-to-markdown to provide more readable docs",
   "main": "index.js",
   "scripts": {
-    "version": "npm run docs && git add docs",
+    "version": "npm run docs && git add ./",
     "docs": "jsdoc2md *.js > README.md -t docs.hbs --plugin index.js -d 3"
   },
   "np": {

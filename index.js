@@ -36,7 +36,7 @@
  */
 module.exports = function() {
 	return {
-		partial: __dirname + "/partials/**/*.hbs",
+		partial: __dirname + "/partials/main/**/*.hbs",
 		helper: __dirname + "/helper.js"
 	};
 };

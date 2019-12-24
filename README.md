@@ -56,6 +56,19 @@ Pass the plug-in name to [`jsdoc2md`](https://github.com/jsdoc2md/jsdoc-to-markd
 | replacer | <code>string</code> | The string to prefix to each line |
 
 
+<br><a name="findBy"></a>
+
+### findBy(array, key, value) ⇒ <code>array</code>
+> Finds an object in an array with a matching key: value
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| array | <code>array</code> | The array to search |
+| key | <code>string</code> | The key to compare |
+| value | <code>string</code> | The value to find |
+
+
 [npm]: https://img.shields.io/npm/v/dmd-readable.svg
 [npm-url]: https://npmjs.com/package/dmd-readable
 [deps]: https://david-dm.org/darrenpaulwright/dmd-readable.svg

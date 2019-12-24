@@ -1,0 +1,32 @@
+{{optionSet "global-index-format" "dl"~}}
+# {{changeCase "title" (package "name")}}
+
+> {{package "description"}}
+>
+> {{#each (package "badges")}}[![{{this.name}}][{{this.name}}]][{{this.name}}-url]
+  {{/each}}
+
+<br><a name="Installation"></a>
+
+{{>heading-indent}}Installation
+```
+npm install {{package "name"}}
+```
+{{#each (findBy this 'name' 'Installation')}}
+{{inlineLinks summary}}
+{{/each}}
+
+{{#each (findBy this 'name' 'About')}}
+<br><a name="About"></a>
+
+{{>heading-indent}}About
+{{inlineLinks summary}}
+
+{{/each}}
+
+{{>main-index~}}
+
+{{#each (package "badges")}}
+[{{this.name}}]: {{this.image}}
+[{{this.name}}-url]: {{this.url}}
+{{/each}}

@@ -12,9 +12,7 @@ const packageJson = require(path.resolve(process.cwd(), 'package.json'));
  *
  * @returns {*}
  */
-exports.package = function(key) {
-	return packageJson[key];
-};
+exports.package = (key) => packageJson[key];
 
 /**
  * Implements the library [change-case](https://github.com/blakeembrey/change-case).
@@ -27,7 +25,7 @@ exports.package = function(key) {
  *
  * @returns {string}
  */
-exports.changeCase = function(to, string) {
+exports.changeCase = (to, string) => {
 	if (to === 'title') {
 		to = 'capitalCase';
 	}
@@ -47,8 +45,18 @@ exports.changeCase = function(to, string) {
  *
  * @returns {string}
  */
-exports.prefixLines = function(string, replacer = '') {
-	if (string) {
-		return replacer + string.replace(/[\r\n]/g, '$&' + replacer);
-	}
-};
+exports.prefixLines = (string, replacer = '') => string ? replacer + string.replace(/[\r\n]/g, '$&' + replacer) : '';
+
+/**
+ * Finds an object in an array with a matching key: value
+ *
+ * @function findBy
+ *
+ * @param {array} array - The array to search
+ * @param {string} key - The key to compare
+ * @param {string} value - The value to find
+ *
+ * @returns {array}
+ */
+exports.findBy = (array, key, value) => [array.find((item) => item[key] === value)].filter(Boolean);
+

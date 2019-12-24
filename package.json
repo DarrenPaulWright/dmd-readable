@@ -3,6 +3,13 @@
   "version": "1.0.1",
   "description": "A plugin for dmd and jsdoc-to-markdown to provide more readable docs",
   "main": "index.js",
+  "files": [
+    "/partials",
+    "helper.js",
+    "docs.hbs",
+    "overview.hbs",
+    "overview-plugin.js"
+  ],
   "scripts": {
     "version": "npm run docs && git add ./",
     "docs": "jsdoc2md *.js > README.md -t docs.hbs --plugin index.js -d 3"

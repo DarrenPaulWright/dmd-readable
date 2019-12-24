@@ -60,3 +60,15 @@ exports.prefixLines = (string, replacer = '') => string ? replacer + string.repl
  */
 exports.findBy = (array, key, value) => [array.find((item) => item[key] === value)].filter(Boolean);
 
+/**
+ * Calls string.replace
+ *
+ * @function replace
+ *
+ * @param {string} string - The string to modify
+ * @param {string} pattern - The first arg for string.replace
+ * @param {string} newString - The second arg for string.replace
+ *
+ * @returns {string}
+ */
+exports.replace = (string = '', pattern, newString) => string.replace(pattern, newString);

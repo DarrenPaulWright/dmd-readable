@@ -14,9 +14,9 @@
 ### Installation
 ```npm install dmd-readable```
 
-<br><a name="Usage"></a>
+<br><a name="About"></a>
 
-### Usage
+### About
 Pass the plug-in name to [`jsdoc2md`](https://github.com/jsdoc2md/jsdoc-to-markdown) or [`dmd`](https://github.com/jsdoc2md/dmd):```jsdoc2md --plugin dmd-readable```This plugin (which was used to generate this readme) does a few things:- removes global indexes (see below)- places descriptions in block-quotes (Use @summary for descriptions without block quotes)- adds more whitespace before headings- changes the delimiter for multiple types in param tables to a comma- adds alias outputThe removal of global indexes is now a setting in the [template](docs.hbs). If you are using your own template and you wish to retain this feature, add the following line to your template:```{{optionSet "global-index-format" "none"~}}```All options for global-index-format are "none", "grouped", "table", "dl". Other options and more info can be found [here](https://github.com/jsdoc2md/jsdoc-to-markdown/blob/master/docs/API.md#jsdoctomarkdown-).This plugin also provides the following helper functions:
 
 <br><a name="package"></a>
@@ -67,6 +67,19 @@ Pass the plug-in name to [`jsdoc2md`](https://github.com/jsdoc2md/jsdoc-to-markd
 | array | <code>array</code> | The array to search |
 | key | <code>string</code> | The key to compare |
 | value | <code>string</code> | The value to find |
+
+
+<br><a name="replace"></a>
+
+### replace(string, pattern, newString) ⇒ <code>string</code>
+> Calls string.replace
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| string | <code>string</code> | The string to modify |
+| pattern | <code>string</code> | The first arg for string.replace |
+| newString | <code>string</code> | The second arg for string.replace |
 
 
 [npm]: https://img.shields.io/npm/v/dmd-readable.svg

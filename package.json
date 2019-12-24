@@ -11,36 +11,41 @@
     "overview-plugin.js"
   ],
   "scripts": {
-    "version": "npm run docs && git add ./",
+    "test": "",
+    "patch": "npm version patch && npm publish",
+    "minor": "npm version minor && npm publish",
+    "major": "npm version major && npm publish",
+    "preversion": "npm test && npm run docs && git add --all && git diff --staged --quiet || git commit -m \"Updating docs\"",
+    "postpublish": "git push --follow-tags",
+    "deps": "ncu -u && npm install",
+    "deps-commit": "npm run deps && git add --all && git diff --staged --quiet || git commit -m \"Updating dependencies\"",
+    "deps-patch": "npm run deps-commit && npm run patch",
     "docs": "jsdoc2md *.js > README.md -t docs.hbs --plugin index.js -d 3"
   },
-  "badges": [
-    {
-      "name": "npm",
-      "image": "https://img.shields.io/npm/v/dmd-readable.svg",
-      "url": "https://npmjs.com/package/dmd-readable"
+  "badges": {
+    "npm": {
+      "image": "https://img.shields.io/npm/v/{{name}}.svg",
+      "url": "https://npmjs.com/package/{{name}}"
     },
-    {
-      "name": "deps",
-      "image": "https://david-dm.org/darrenpaulwright/dmd-readable.svg",
-      "url": "https://david-dm.org/darrenpaulwright/dmd-readable"
+    "deps": {
+      "image": "https://david-dm.org/darrenpaulwright/{{name}}.svg",
+      "url": "https://david-dm.org/darrenpaulwright/{{name}}"
     },
-    {
-      "name": "size",
-      "image": "https://packagephobia.now.sh/badge?p=dmd-readable",
-      "url": "https://packagephobia.now.sh/result?p=dmd-readable"
+    "size": {
+      "base": "https://packagephobia.now.sh/",
+      "image": "badge?p={{name}}",
+      "url": "result?p={{name}}"
     },
-    {
-      "name": "vulnerabilities",
-      "image": "https://snyk.io/test/github/DarrenPaulWright/dmd-readable/badge.svg?targetFile=package.json",
-      "url": "https://snyk.io/test/github/DarrenPaulWright/dmd-readable?targetFile=package.json"
+    "vulnerabilities": {
+      "base": "https://snyk.io/test/github/DarrenPaulWright/{{name}}",
+      "image": "/badge.svg?targetFile=package.json",
+      "url": "?targetFile=package.json"
     },
-    {
-      "name": "license",
-      "image": "https://img.shields.io/github/license/DarrenPaulWright/dmd-readable.svg",
-      "url": "https://npmjs.com/package/dmd-readable/LICENSE.md"
+    "license": {
+      "image": "https://img.shields.io/github/license/DarrenPaulWright/{{name}}.svg",
+      "url": "https://npmjs.com/package/{{name}}/LICENSE.md"
     }
-  ],
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DarrenPaulWright/dmd-readable.git"

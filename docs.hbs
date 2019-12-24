@@ -3,12 +3,12 @@
 
 > {{package "description"}}
 >
-> {{#each (package "badges")}}[![{{this.name}}][{{this.name}}]][{{this.name}}-url]
+> {{#each (package "badges")}}[![{{@key}}][{{@key}}]][{{@key}}-url]
   {{/each}}
 
 {{>main}}
 
 {{#each (package "badges")}}
-[{{this.name}}]: {{this.image}}
-[{{this.name}}-url]: {{this.url}}
+[{{@key}}]: {{replace this.base "{{name}}" (package "name")}}{{replace this.image "{{name}}" (package "name")}}
+[{{@key}}-url]: {{replace this.base "{{name}}" (package "name")}}{{replace this.url "{{name}}" (package "name")}}
 {{/each}}

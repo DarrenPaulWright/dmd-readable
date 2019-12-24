@@ -7,9 +7,6 @@
     "version": "npm run docs && git add ./",
     "docs": "jsdoc2md *.js > README.md -t docs.hbs --plugin index.js -d 3"
   },
-  "np": {
-    "tests": false
-  },
   "badges": [
     {
       "name": "npm",

@@ -72,3 +72,19 @@ exports.findBy = (array, key, value) => [array.find((item) => item[key] === valu
  * @returns {string}
  */
 exports.replace = (string = '', pattern, newString) => string.replace(pattern, newString);
+
+/**
+ * Determines if the provided string is truthy and is different than the string provided the previous time this function was called
+ *
+ * @function isNew
+ *
+ * @param {string} string
+ *
+ * @returns {boolean}
+ */
+let current = '';
+exports.isNew = function(string) {
+	const isNew = string !== current;
+	current = string;
+	return string && isNew;
+};

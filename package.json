@@ -12,12 +12,13 @@
   ],
   "scripts": {
     "test": "",
-    "patch": "npm version patch && npm publish",
-    "minor": "npm version minor && npm publish",
-    "major": "npm version major && npm publish",
     "preversion": "npm test && npm run docs && git add --all && git diff --staged --quiet || git commit -m \"Updating docs\"",
+    "postversion": "npm publish",
     "postpublish": "git push --follow-tags",
+    "pre-clean": "rm -rf node_modules && del /f package-lock.json",
+    "clean": "npm run dpre-clean && npm install",
     "deps": "ncu -u && npm install",
+    "deps-clean": "npm run dpre-clean && npm run ddeps",
     "deps-commit": "npm run deps && git add --all && git diff --staged --quiet || git commit -m \"Updating dependencies\"",
     "deps-patch": "npm run deps-commit && npm run patch",
     "docs": "jsdoc2md *.js > README.md -t docs.hbs --plugin index.js -d 3"
@@ -62,7 +63,7 @@
   },
   "homepage": "https://github.com/DarrenPaulWright/dmd-readable#readme",
   "dependencies": {
-    "change-case": "^4.1.0"
+    "change-case": "^4.1.1"
   },
   "devDependencies": {
     "jsdoc-to-markdown": "^5.0.3"

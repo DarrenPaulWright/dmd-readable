@@ -82,6 +82,17 @@ Pass the plug-in name to [`jsdoc2md`](https://github.com/jsdoc2md/jsdoc-to-markd
 | newString | <code>string</code> | The second arg for string.replace |
 
 
+<br><a name="isNew"></a>
+
+### isNew(string) ⇒ <code>boolean</code>
+> Determines if the provided string is truthy and is different than the string provided the previous time this function was called
+
+
+| Param | Type |
+| --- | --- |
+| string | <code>string</code> | 
+
+
 [npm]: https://img.shields.io/npm/v/dmd-readable.svg
 [npm-url]: https://npmjs.com/package/dmd-readable
 [deps]: https://david-dm.org/darrenpaulwright/dmd-readable.svg

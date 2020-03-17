@@ -1,71 +1,75 @@
 {
-  "name": "dmd-readable",
-  "version": "1.2.0",
-  "description": "A plugin for dmd and jsdoc-to-markdown to provide more readable docs",
-  "main": "index.js",
-  "files": [
-    "/partials",
-    "helper.js",
-    "docs.hbs",
-    "overview.hbs",
-    "overview-plugin.js"
-  ],
-  "scripts": {
-    "test": "",
-    "preversion": "npm test && npm run docs && git add --all && git diff --staged --quiet || git commit -m \"Updating docs\"",
-    "postversion": "npm publish",
-    "postpublish": "git push --follow-tags",
-    "pre-clean": "rm -rf node_modules && del /f package-lock.json",
-    "clean": "npm run dpre-clean && npm install",
-    "deps": "ncu -u && npm install",
-    "deps-clean": "npm run dpre-clean && npm run ddeps",
-    "deps-commit": "npm run deps && git add --all && git diff --staged --quiet || git commit -m \"Updating dependencies\"",
-    "deps-patch": "npm run deps-commit && npm run patch",
-    "docs": "jsdoc2md *.js > README.md -t docs.hbs --plugin index.js -d 3"
-  },
-  "badges": {
-    "npm": {
-      "image": "https://img.shields.io/npm/v/{{name}}.svg",
-      "url": "https://npmjs.com/package/{{name}}"
-    },
-    "deps": {
-      "image": "https://david-dm.org/darrenpaulwright/{{name}}.svg",
-      "url": "https://david-dm.org/darrenpaulwright/{{name}}"
-    },
-    "size": {
-      "base": "https://packagephobia.now.sh/",
-      "image": "badge?p={{name}}",
-      "url": "result?p={{name}}"
-    },
-    "vulnerabilities": {
-      "base": "https://snyk.io/test/github/DarrenPaulWright/{{name}}",
-      "image": "/badge.svg?targetFile=package.json",
-      "url": "?targetFile=package.json"
-    },
-    "license": {
-      "image": "https://img.shields.io/github/license/DarrenPaulWright/{{name}}.svg",
-      "url": "https://npmjs.com/package/{{name}}/LICENSE.md"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DarrenPaulWright/dmd-readable.git"
-  },
-  "keywords": [
-    "dmd",
-    "readable",
-    "clean"
-  ],
-  "author": "Darren Paul Wright <Darren@DarrenPaulWright.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/DarrenPaulWright/dmd-readable/issues"
-  },
-  "homepage": "https://github.com/DarrenPaulWright/dmd-readable#readme",
-  "dependencies": {
-    "change-case": "^4.1.1"
-  },
-  "devDependencies": {
-    "jsdoc-to-markdown": "^5.0.3"
-  }
+	"name": "dmd-readable",
+	"version": "1.2.0",
+	"description": "A plugin for dmd and jsdoc-to-markdown to provide more readable docs",
+	"main": "index.js",
+	"files": [
+		"/partials",
+		"helper.js",
+		"docs.hbs",
+		"overview.hbs",
+		"overview-plugin.js"
+	],
+	"scripts": {
+		"test": "",
+		"preversion": "npm test && npm run docs && git add --all && git diff --staged --quiet || git commit -m \"Updating docs\"",
+		"postversion": "npm publish",
+		"postpublish": "git push --follow-tags",
+		"pre-clean": "rm -rf node_modules && del /f package-lock.json",
+		"clean": "npm run pre-clean && npm install",
+		"update": "ncu -u && npm install",
+		"update-clean": "npm run pre-clean && npm run update",
+		"update-commit": "npm run update && npm test && git add --all && git diff --staged --quiet || git commit -m \"Updating dependencies\"",
+		"update-patch": "npm run update-commit && npm version patch",
+		"docs": "jsdoc2md *.js > README.md -t docs.hbs --plugin index.js -d 3"
+	},
+	"badges": {
+		"npm": {
+			"image": "https://img.shields.io/npm/v/{{name}}.svg",
+			"url": "https://npmjs.com/package/{{name}}"
+		},
+		"deps": {
+			"image": "https://david-dm.org/darrenpaulwright/{{name}}.svg",
+			"url": "https://david-dm.org/darrenpaulwright/{{name}}"
+		},
+		"size": {
+			"base": "https://packagephobia.now.sh/",
+			"image": "badge?p={{name}}",
+			"url": "result?p={{name}}"
+		},
+		"vulnerabilities": {
+			"base": "https://snyk.io/test/github/DarrenPaulWright/{{name}}",
+			"image": "/badge.svg?targetFile=package.json",
+			"url": "?targetFile=package.json"
+		},
+		"license": {
+			"image": "https://img.shields.io/github/license/DarrenPaulWright/{{name}}.svg",
+			"url": "https://npmjs.com/package/{{name}}/LICENSE.md"
+		}
+	},
+	"repository": {
+	"type": "git",
+	"url": "git+https://github.com/DarrenPaulWright/dmd-readable.git"
+	},
+	"keywords": [
+	"dmd",
+	"readable",
+	"clean"
+	],
+	"author": {
+		"name": "Darren Paul Wright",
+		"email": "Darren@DarrenPaulWright.com",
+		"url": "https://www.darrenpaulwright.com"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/DarrenPaulWright/dmd-readable/issues"
+	},
+	"homepage": "https://github.com/DarrenPaulWright/dmd-readable#readme",
+	"dependencies": {
+		"change-case": "^4.1.1"
+	},
+	"devDependencies": {
+		"jsdoc-to-markdown": "^5.0.3"
+	}
 }

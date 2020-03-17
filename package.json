@@ -1,6 +1,6 @@
 {
 	"name": "dmd-readable",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "A plugin for dmd and jsdoc-to-markdown to provide more readable docs",
 	"main": "index.js",
 	"files": [
@@ -48,13 +48,13 @@
 		}
 	},
 	"repository": {
-	"type": "git",
-	"url": "git+https://github.com/DarrenPaulWright/dmd-readable.git"
+		"type": "git",
+		"url": "git+https://github.com/DarrenPaulWright/dmd-readable.git"
 	},
 	"keywords": [
-	"dmd",
-	"readable",
-	"clean"
+		"dmd",
+		"readable",
+		"clean"
 	],
 	"author": {
 		"name": "Darren Paul Wright",

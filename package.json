@@ -1,6 +1,6 @@
 {
 	"name": "dmd-readable",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"description": "A plugin for dmd and jsdoc-to-markdown to provide more readable docs",
 	"main": "index.js",
 	"files": [

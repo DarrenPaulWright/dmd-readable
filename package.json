@@ -67,9 +67,9 @@
 	},
 	"homepage": "https://github.com/DarrenPaulWright/dmd-readable#readme",
 	"dependencies": {
-		"change-case": "^4.1.1"
+		"change-case": "^4.1.2"
 	},
 	"devDependencies": {
-		"jsdoc-to-markdown": "^6.0.1"
+		"jsdoc-to-markdown": "^7.0.1"
 	}
 }
